@@ -1,2 +1,48 @@
-# My_Py_BST
-The Binary tree implemented by Python
+# 基于Python实现二叉树
+
+---
+
+## 前言
+
+这两天开始正式学python，看了些基础教程感觉还不错，于是想着写一些代码练练手。想起来最开始学C++也是敲的数据结构，于是准备基于python撸一些数据结构，先拿二叉树开刀吧！
+
+## 实现目标
+1. 二叉树的定义与构造
+2. 二叉树的单点更新
+2. 二叉树的区间查询
+
+
+
+### 二叉树的定义与构造
+
+
+二叉树的定义是Python与c++代码风格的主要区别  
+先看看我的c++二叉树定义：
+
+```c++
+
+struct node
+{
+    node *l, *r; //当前节点的左右树
+    int v;       //节点值
+    node(int vv, node *ll, node *rr) { l = ll, r = rr, v = vv; }
+};
+
+```
+
+观察可知，主要由两部分构成：
+1. 指向自己的指针，也就是左右结点
+2. 构造函数
+
+在Python中，构造函数通过定义class中的 “__init__” 函数来实现，而左右节点的指针可以通过“__init__”中的self参数来指向自身的其他参数来实现，代码如下：
+
+```python
+
+class node(object):
+	def __init__(self,l,r):
+		self.l = l # 当前节点的左右树
+		self.r = r 
+        self.v = 0 # 节点值
+
+```
+
