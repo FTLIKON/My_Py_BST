@@ -45,7 +45,7 @@ class node(object):
 	def __init__(self,l,r):
 		self.l = l # 当前节点的左右树
 		self.r = r 
-        self.v = 0 # 节点值
+		self.v = 0 # 节点值
 
 ```
 
